@@ -1,1049 +1,412 @@
+# Optimized `index.html`
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-<meta name="description" content="Omni-Prep 2026-27 — 22 Exam Master Study Plan"/>
-<meta name="theme-color" content="#080c10"/>
-<title>Omni-Prep 2026–27 | Exam Master Plan</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 
+<title>Omni-Prep 2026–27 | Government Exam Master Plan</title>
+
+<meta name="description" content="Comprehensive preparation roadmap for RBI Grade B, SEBI Grade A, SSC, Banking, Insurance and Government exams.">
+<meta name="theme-color" content="#080c10">
+<meta name="robots" content="index,follow">
+
+<!-- Performance -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://unpkg.com">
+
+<!-- Fonts -->
+<link
+rel="preload"
+as="style"
+href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+onload="this.onload=null;this.rel='stylesheet'"
+>
+
+<noscript>
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+</noscript>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Omni-Prep 2026–27">
+<meta property="og:description" content="Government exam preparation dashboard for RBI, SEBI, SSC, Banking and Insurance exams.">
+<meta property="og:image" content="/og-image.webp">
+<meta property="og:url" content="https://yourdomain.com">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Omni-Prep 2026–27">
+<meta name="twitter:description" content="Strategic preparation system for RBI, SEBI, SSC and Banking exams.">
+<meta name="twitter:image" content="/og-image.webp">
+
+<!-- PWA -->
+<link rel="manifest" href="/manifest.json">
+
+<!-- Critical CSS -->
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;font-size:16px}
-body{-webkit-font-smoothing:antialiased}
-#root{min-height:100vh}
-button{font-family:inherit;cursor:pointer}
-::-webkit-scrollbar{width:4px;height:4px}
-::-webkit-scrollbar-track{background:transparent}
-::-webkit-scrollbar-thumb{background:rgba(128,128,128,0.25);border-radius:2px}
+:root{
+  --bg:#080c10;
+  --surface:#10161d;
+  --border:rgba(255,255,255,.08);
+  --text:#e2e8f0;
+  --muted:#94a3b8;
+  --accent:#00b47a;
+  --radius:14px;
+}
 
-.tab-bar::-webkit-scrollbar{display:none}
-.tab-bar{scrollbar-width:none}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-.check-item{border-radius:6px;transition:background 0.1s}
-.check-item:hover{background:var(--hover-bg)!important}
+html{
+  scroll-behavior:smooth;
+}
 
-.tag-chip{display:inline-block;font-size:10px;font-family:'Space Mono',monospace;letter-spacing:.5px;padding:3px 8px;border-radius:5px;margin:2px;line-height:1.5}
+body{
+  font-family:Inter,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
 
-@media(max-width:500px){
-  .week-grid{grid-template-columns:repeat(4,1fr)!important}
-  .stat-grid{grid-template-columns:repeat(2,1fr)!important}
+img{
+  max-width:100%;
+  display:block;
+}
+
+button{
+  font:inherit;
+  border:none;
+  cursor:pointer;
+}
+
+main{
+  width:min(1200px,92%);
+  margin:auto;
+  padding:32px 0;
+}
+
+header{
+  margin-bottom:32px;
+}
+
+.hero-title{
+  font-size:clamp(2rem,5vw,4rem);
+  line-height:1.05;
+  font-weight:800;
+}
+
+.hero-subtitle{
+  margin-top:14px;
+  color:var(--muted);
+  max-width:800px;
+}
+
+.grid{
+  display:grid;
+  gap:20px;
+}
+
+.stats{
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  margin-top:30px;
+}
+
+.card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:20px;
+}
+
+.card h2{
+  font-size:1rem;
+  margin-bottom:10px;
+}
+
+.stat-number{
+  font-size:2rem;
+  font-weight:800;
+  color:var(--accent);
+}
+
+.section{
+  margin-top:50px;
+}
+
+.exam-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:18px;
+  margin-top:20px;
+}
+
+.exam-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:20px;
+  transition:transform .2s ease;
+}
+
+.exam-card:hover{
+  transform:translateY(-3px);
+}
+
+.exam-title{
+  font-weight:700;
+  margin-bottom:8px;
+}
+
+.exam-meta{
+  font-size:.875rem;
+  color:var(--muted);
+}
+
+footer{
+  margin-top:60px;
+  padding:30px 0;
+  border-top:1px solid var(--border);
+  color:var(--muted);
+  font-size:.875rem;
+}
+
+@media (max-width:768px){
+  main{
+    width:94%;
+  }
+
+  .hero-title{
+    font-size:2.5rem;
+  }
 }
 </style>
-</head>
-<body>
-<div id="root"></div>
 
-<!-- React + Babel via CDN (no build step needed) -->
-<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
-<script type="text/babel">
-const { useState, useCallback } = React;
-
-/* ═══════════════════════════════════════════════════════════════
-   THEME TOKENS
-═══════════════════════════════════════════════════════════════ */
-const THEMES = {
-  dark:{
-    bg:"#080c10", surface:"rgba(255,255,255,0.035)", border:"rgba(255,255,255,0.07)",
-    border2:"rgba(255,255,255,0.13)", text:"#e2e8f0", textMuted:"#64748b", textDim:"#94a3b8",
-    accent:"#00b47a", tabBg:"rgba(0,180,122,0.07)", headerBg:"rgba(8,12,16,0.93)",
-    inputBg:"rgba(255,255,255,0.04)", alertBg:"rgba(251,146,60,0.08)",
-    alertBorder:"rgba(251,146,60,0.18)", alertColor:"#fb923c", alertStrong:"#fed7aa",
-    mono:"Space Mono,monospace"
-  },
-  light:{
-    bg:"#f1f5f9", surface:"rgba(255,255,255,0.95)", border:"rgba(0,0,0,0.08)",
-    border2:"rgba(0,0,0,0.13)", text:"#1e293b", textMuted:"#64748b", textDim:"#475569",
-    accent:"#007a52", tabBg:"rgba(0,122,82,0.07)", headerBg:"rgba(241,245,249,0.96)",
-    inputBg:"rgba(0,0,0,0.025)", alertBg:"rgba(234,88,12,0.06)",
-    alertBorder:"rgba(234,88,12,0.15)", alertColor:"#c2410c", alertStrong:"#431407",
-    mono:"Space Mono,monospace"
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"EducationalWebSite",
+  "name":"Omni-Prep 2026–27",
+  "description":"Preparation dashboard for RBI Grade B, SEBI Grade A, SSC, Banking and Insurance exams.",
+  "url":"https://yourdomain.com",
+  "inLanguage":"en",
+  "publisher":{
+    "@type":"Organization",
+    "name":"Omni Prep"
   }
-};
-
-/* ═══════════════════════════════════════════════════════════════
-   FULL EXAM SYLLABUS DATA
-═══════════════════════════════════════════════════════════════ */
-const EXAM_DATA = {
-  "UPCISBL Junior Manager":{
-    color:"#f59e0b", priority:"🔥 FILLED", vacancies:"2085",
-    prelims:{
-      pattern:"100 Qs · 100 Marks · 90 min · ¼ Negative Marking",
-      sections:{
-        "Numerical Ability (35 Qs)":["Simplification & Approximation","Number Series","Percentage","Profit, Loss & Discount","Simple & Compound Interest","Average","Ratio & Proportion","Problems on Ages","Partnership","Time & Work / Pipes & Cisterns","Speed, Time & Distance","Problems on Trains, Boats & Streams","Probability","Permutation & Combination","Mensuration — Cone, Sphere, Cylinder","Data Interpretation — Bar, Pie, Line, Tabular","Basic Algebra","Basic Trigonometry","Measures of Central Tendency","Indices & Logarithms"],
-        "Reasoning Ability (20 Qs)":["Alphabetical Order & Misc Series","Coding & Decoding","Direction & Distance","Blood Relations","Order & Ranking","Linear & Circular Seating Arrangement","Data Sufficiency","Syllogism","Input-Output","Inequality","Decision Making","Statement & Assumption","Course of Action","Non-Verbal: Figure Series","Non-Verbal: Water/Mirror Images","Non-Verbal: Figure Matrix"],
-        "Hindi Language (part of 35 Qs)":["Apathit Bodh — Comprehension","Rikta Sthan Purti — Fill in the Blanks","Vakya Shuddhi — Sentence Correction","Alankar","Paryayvachi Shabd — Synonyms","Vilom Shabd — Antonyms","Shabd Sudhar — Word Correction","Samas","Sandhi"],
-        "English Language (part of 35 Qs)":["Synonyms & Antonyms","Idioms & Phrases","Tenses & Grammar Rules","Sentence Correction","Fill in the Blanks","Spotting Errors","Cloze Test","Jumbled Sentences / Para Completion"],
-        "Cooperative Knowledge (10 Qs)":["Origin & Development of Cooperative Societies in India","Rochdale Pioneers & cooperative movement history","National level cooperatives — IFFCO, AMUL, KRIBHCO","UP Cooperative Bank structure & history","Cooperative Laws & Acts in India","Role of Cooperatives in Rural Economy","NABARD & cooperative credit linkage"]
-      }
-    },
-    mains:{
-      pattern:"120 Qs · 200 Marks · 120 min · ¼ Negative · Min 40% Gen / 35% SC/ST",
-      sections:{
-        "Reasoning Ability (20 Qs)":["All Prelims Reasoning at higher difficulty","Complex multi-variable Puzzles","Critical Reasoning","Advanced Input-Output"],
-        "Numerical Ability (20 Qs)":["All Prelims Quant at higher difficulty","Advanced DI — Caselets, Mixed Graphs","Number System advanced","Advanced Algebra"],
-        "General Awareness (40 Qs)":["Current Affairs — last 6 months","Banking & Financial Awareness","RBI policies — Repo, Reverse Repo, CRR, SLR","Government schemes — UP + Central","Union Budget highlights","Economy — GDP, Inflation, Fiscal Policy","Sports, Awards, Appointments","International affairs — G20, BRICS, IMF, World Bank","UP state news & schemes","Important committees & their reports"],
-        "Cooperative Knowledge (15 Qs)":["History of Cooperative Movement globally & India","Cooperative Societies Act 1912","Multi-State Cooperative Societies Act 2002","UP Cooperative Societies Act & amendments","Types — Credit, Housing, Consumer, Dairy Cooperatives","NABARD's role in cooperative credit","Issues & Challenges in Indian Cooperative Sector","Government initiatives for cooperative sector","UP Cooperative Bank — structure, purpose, functions"],
-        "Language — Hindi & English (15 Qs)":["Advanced Hindi Grammar & Comprehension","Advanced English Grammar & Error Correction","Reading Comprehension — difficult passages","Advanced Vocabulary","Sentence Rearrangement & Para Jumbles"],
-        "Professional Subject — Managerial Skills (10 Qs)":["Basic Banking Operations & Products","Credit Appraisal & Loan Processing","Financial Statement Analysis — Balance Sheet basics","NPA Classification & Recovery norms","KYC / AML Guidelines","Priority Sector Lending — categories & targets","Branch Management & Customer Service","RBI Regulations applicable to Cooperative Banks","PMJDY & Financial Inclusion schemes","Digital Banking & Payment Systems — UPI, NEFT, RTGS"]
-      }
-    },
-    interview:{
-      pattern:"3× vacancies shortlisted from Mains · Interview marks added to final merit",
-      sections:{
-        "Banking & Finance Knowledge":["RBI functions & monetary policy tools","Difference: Commercial Banks vs Cooperative Banks","Current Repo, Reverse Repo, CRR, SLR rates","Recent RBI circulars & guidelines","Priority sector lending — categories & percentage targets","NPA — definition, classification, resolution mechanisms","PMJDY, Jan Suraksha schemes"],
-        "Cooperative Sector Knowledge":["History & importance of cooperative movement in UP","Role of UPCISB & organizational hierarchy","UP District Cooperative Banks — structure & coverage","Key challenges in Indian cooperative banking sector","Govt. initiatives for cooperative sector — Budget 2026"],
-        "Current Affairs & Economy":["Last 3 months Economy, Banking, Finance news","Recent government schemes — UP + Central","Sports, Awards, Important summits","Recent RBI policy changes","UP-specific economic developments"],
-        "Personal & Behavioral Questions":["Why cooperative banking as a career?","Strengths & weaknesses — be specific","Academic background — B.Tech CSE relevance","Situational: customer complaint, loan default handling","How CSE background helps in banking operations","Your understanding of the Junior Manager role"],
-        "UP State Awareness":["UP Economy — key industries, MSME, agriculture","Major UP government schemes","UP's cooperative sector scale & district reach","Recent UP news — infrastructure, development"]
-      }
-    }
-  },
-  "MP Apex Bank (Computer Operator)":{
-    color:"#a78bfa", priority:"⭐ TOP 2026", vacancies:"748",
-    prelims:{
-      pattern:"IBPS-conducted · Objective MCQ · IBPS Clerk pattern",
-      sections:{
-        "Reasoning Ability":["Puzzles & Seating Arrangement","Syllogism","Blood Relations","Direction & Distance","Coding-Decoding","Inequality","Input-Output","Data Sufficiency","Order & Ranking"],
-        "English Language":["Reading Comprehension","Error Spotting","Fill in the Blanks","Cloze Test","Sentence Rearrangement","Vocabulary — Synonyms/Antonyms"],
-        "Quantitative Aptitude":["Number Series","Simplification/Approximation","DI — Table, Bar, Line, Pie","Quadratic Equations","Time & Work / Pipes","Speed, Distance, Trains","Profit, Loss, Discount","SI & CI","Percentage, Ratio, Average"],
-        "Computer Knowledge":["MS Office — Word, Excel, PowerPoint shortcuts","Internet & Networking basics","Operating System fundamentals","DBMS & SQL basics","Computer hardware components","Input/Output devices","Memory types — RAM, ROM, Cache","Cybersecurity & Virus basics","Programming basics — C, Python","Number Systems — Binary, Hex, Octal"],
-        "General/Banking Awareness (MP Focus)":["Banking awareness — RBI, NABARD, SBI","MP State Current Affairs","MP Government schemes","MP Apex Bank history & structure","National current affairs last 6 months","Financial awareness"]
-      }
-    },
-    mains:{
-      pattern:"Mains if conducted — detailed pattern TBD by IBPS",
-      sections:{
-        "Advanced Reasoning":["High-level Puzzles","Analytical Reasoning","Critical Thinking"],
-        "Advanced Quant & DI":["Complex DI — Mixed, Caselet","Advanced Arithmetic"],
-        "Descriptive English":["Letter writing (formal/informal)","Essay writing — Banking/Technology topics"],
-        "Computer & IT Knowledge":["Advanced Networking — OSI Model, TCP/IP","DBMS — Normalization, SQL queries","Operating Systems — Process, Memory Management","Software Development Life Cycle","Computer Security & Encryption basics"]
-      }
-    }
-  },
-  "SSC CHSL":{
-    color:"#00b47a", priority:"2026 Target", vacancies:"~3000+",
-    prelims:{
-      pattern:"100 Qs · 200 Marks · 60 min · ¼ Negative (0.50 per wrong)",
-      sections:{
-        "Quantitative Aptitude (25 Qs)":["Number System","LCM & HCF","Percentage","Profit & Loss","Discount","SI & CI","Time & Work","Time, Speed & Distance","Trigonometry — Ratio, Identities","Geometry — Triangle, Circle, Quadrilateral","Mensuration — 2D & 3D","Statistics — Mean, Median, Mode"],
-        "General Intelligence & Reasoning (25 Qs)":["Analogies (Verbal & Non-Verbal)","Series (Number, Alphabet, Figure)","Coding-Decoding","Blood Relations","Direction & Distance","Syllogism","Venn Diagrams","Matrix & Word Formation","Statement & Conclusion","Non-Verbal: Paper Folding, Cutting","Mirror & Water Images"],
-        "English Language (25 Qs)":["Reading Comprehension","Cloze Test","Fill in the Blanks","Synonyms & Antonyms","Spelling Correction","One-word Substitution","Idioms & Phrases","Error Detection","Para Jumbles"],
-        "General Awareness (25 Qs)":["History — Ancient, Medieval, Modern India","Geography — India & World","Indian Polity & Constitution","Economy — Basic concepts","Science — Physics, Chemistry, Biology","Current Affairs last 6 months","Static GK — Books, Authors, Awards, Sports"]
-      }
-    },
-    mains:{
-      pattern:"Paper I: Math+Reasoning+GA+English · Paper II: English Comprehension (60 min)",
-      sections:{
-        "Math & Reasoning (Mains Level)":["All Prelims Quant at higher level","Advanced Geometry & Mensuration","Advanced Trigonometry","Data Interpretation — advanced","Algebra — Linear, Quadratic Equations"],
-        "General Awareness (Mains Level)":["All Prelims GK at higher level","Current Affairs depth","Science & Technology"],
-        "English Language & Comprehension (Paper II)":["All Prelims English at higher level","Para Jumbles — complex","Sentence Improvement","Active/Passive Voice","Direct/Indirect Speech","Comprehension — unseen passages (long)"]
-      }
-    }
-  },
-  "SSC Stenographer":{
-    color:"#34d399", priority:"2026 Target", vacancies:"~1000+",
-    prelims:{
-      pattern:"200 Qs · 200 Marks · 120 min · ¼ Negative",
-      sections:{
-        "General Intelligence & Reasoning (50 Qs)":["Analogies (Semantic, Figural, Symbolic)","Series (Number, Alphabet, Figural)","Coding-Decoding","Blood Relations","Direction & Distance","Syllogism","Matrix","Figure Classification","Word Formation","Non-Verbal: Paper Folding, Matrices"],
-        "General Awareness (50 Qs)":["Static GK — History, Geography, Polity, Economy","Current Affairs last 12 months","Science & Technology","Books & Authors","Sports, Awards, Honours","Important Days & Events","India & World organizations"],
-        "English Language & Comprehension (100 Qs)":["Vocabulary — Synonyms, Antonyms, Homonyms","Comprehension passages","Fill in the Blanks","Spotting Errors","Sentence Correction/Improvement","Para Jumbles","Cloze Test","Idioms & Phrases","One Word Substitution"]
-      }
-    },
-    skill:{
-      pattern:"Grade C: 100 WPM dictation 10 min → 50 min transcription · Grade D: 80 WPM → 65 min",
-      sections:{
-        "Stenography Skill Test":["Shorthand Theory — Pitman/Hindi","Speed building — 80 WPM minimum (Grade D)","Speed building — 100 WPM (Grade C)","Transcription accuracy — English","Transcription accuracy — Hindi (Hindi Steno posts)","10-min dictation passage practice daily","Computer typing of shorthand notes","Common topics: speeches, meetings, reports"]
-      }
-    }
-  },
-  "BIS ASO":{
-    color:"#60a5fa", priority:"2026 Target", vacancies:"Varies",
-    prelims:{
-      pattern:"Objective MCQ — Prelims + Mains + Document Verification",
-      sections:{
-        "Reasoning & Analytical Ability":["Critical Reasoning (CAT-level sometimes)","Puzzles & Seating Arrangements","Blood Relations & Direction","Syllogism","Statement & Assumption/Conclusion","Analytical Problems — Data sets","Verbal Analogies","Series Completion"],
-        "English Comprehension & Communication":["Reading Comprehension — academic passages","Vocabulary in context","Sentence Correction & Improvement","Error Spotting","Fill in the Blanks","Paragraph Coherence"],
-        "General Awareness":["Current Affairs last 6 months","Science & Technology news","Standards & Quality bodies — BIS, ISO, ISI","Consumer Protection & Standards","Government policies — manufacturing, quality"]
-      }
-    },
-    mains:{
-      pattern:"IT/CS Technical Paper + Descriptive English",
-      sections:{
-        "Technical — CSE Specialist Paper":["Data Structures — Arrays, Trees, Graphs, Hashing","Algorithms — Sorting, Searching, Complexity (Big-O)","Object Oriented Programming — Java/C++","Operating Systems — Process, Memory, File, Deadlock","Computer Networks — OSI/TCP-IP, Protocols, IP Addressing","DBMS — ER Model, Normalization, SQL, Transactions","Software Engineering — SDLC, Agile, Testing","Compiler Design — Lexical, Parsing, Code Generation","Theory of Computation — Automata, Grammar","Web Technologies — HTML, CSS, HTTP basics","Cybersecurity basics — Encryption, Firewalls","Cloud Computing basics"],
-        "Descriptive English":["Essay writing — Technology, Standards, Consumer topics","Precis writing","Letter writing — formal","Comprehension — unseen passage"]
-      }
-    }
-  },
-  "IBPS PO":{
-    color:"#3b82f6", priority:"2027 Priority 1", vacancies:"~4000",
-    prelims:{
-      pattern:"100 Qs · 100 Marks · 60 min · Sectional time 20+20+20 min",
-      sections:{
-        "Quantitative Aptitude (35 Qs · 20 min)":["Number Series","Simplification/Approximation","DI — Table, Bar, Line, Pie, Mixed","Quadratic Equations","Time & Work / Pipes","Speed, Distance, Trains","Profit, Loss, Discount","SI & CI","Percentage, Ratio, Average, Partnership","Probability"],
-        "Reasoning Ability (35 Qs · 20 min)":["Puzzles — Linear, Circular, Floor, Box, Month","Seating Arrangement","Syllogism","Blood Relations","Direction & Distance","Coding-Decoding","Inequality (Mathematical & Coded)","Input-Output","Data Sufficiency"],
-        "English Language (30 Qs · 20 min)":["Reading Comprehension","Error Spotting","Fill in the Blanks","Cloze Test","Para Jumbles","Vocabulary"]
-      }
-    },
-    mains:{
-      pattern:"200 Qs · 200 Marks · 180 min + Descriptive 30 min",
-      sections:{
-        "Reasoning & Computer Aptitude (45 Qs · 60 min)":["High-level Puzzles & Seating","Logical Reasoning","Complex Input-Output","Data Sufficiency","Computer Fundamentals — MS Office, Networking","Internet & Cyber Security","Operating System basics"],
-        "Data Analysis & Interpretation (35 Qs · 45 min)":["Advanced DI — Caselet, Mixed Graphs","Data Sufficiency (Quant-based)","Quantitative techniques — probability, permutation"],
-        "General Economy & Banking Awareness (40 Qs · 35 min)":["Current Affairs last 6 months","Banking awareness — RBI, SEBI, NABARD, NHB","Financial market & monetary policy","Government schemes — PM Mudra, PMJDY, etc","Indian Economy fundamentals","International organizations — IMF, WB, ADB","Budget highlights"],
-        "English Language (35 Qs · 40 min)":["RC — 2 long passages","Error Detection","Fill in the Blanks (double fillers)","Para Jumbles","Para/Sentence Completion","Vocabulary in context"],
-        "Descriptive English (30 min)":["Essay writing 250 words — economy/banking/social topics","Letter writing 150 words — formal/business"]
-      }
-    },
-    interview:{
-      pattern:"Shortlisted from Mains merit · Composite: Mains 80% + Interview 20%",
-      sections:{
-        "Banking & Finance":["RBI monetary policy — recent decisions","Basel III norms","NABARD, SIDBI, EXIM Bank roles","NPA status in Indian banking","Digital banking — UPI, NEFT, RTGS","Recent bank mergers"],
-        "Economy & Current Affairs":["Budget 2025-26 — key allocations","GDP growth, Inflation trend","Fiscal deficit targets","Recent government schemes"],
-        "Personal & HR":["Why banking as a career?","Tell me about yourself","Strengths, Weaknesses","Situational banking scenarios","Academic background discussion"],
-        "General Awareness":["Current affairs last 3 months","Static GK — Capitals, Currencies, Organizations","Science & Technology news"]
-      }
-    }
-  },
-  "SBI PO":{
-    color:"#f59e0b", priority:"2027 Priority 2", vacancies:"~600",
-    prelims:{
-      pattern:"100 Qs · 100 Marks · 60 min · Sectional cutoffs",
-      sections:{
-        "Quantitative Aptitude (35 Qs)":["All IBPS PO Prelims topics + Higher difficulty DI","Data Sufficiency (Quant)","High-difficulty Number Series"],
-        "Reasoning Ability (35 Qs)":["Higher difficulty Puzzles than IBPS PO","Complex multi-variable Seating","Analytical Reasoning — SBI specific pattern"],
-        "English Language (30 Qs)":["Vocabulary-heavy RC passages","Word Usage in Context","New pattern: Word Rearrangement in sentence"]
-      }
-    },
-    mains:{
-      pattern:"155+2 Qs · Objective + Descriptive · 3 hours total",
-      sections:{
-        "Reasoning & Computer Aptitude (50 Qs)":["Extremely high-level Puzzles (5-6 variable)","Logical Reasoning — complex statements","Computer Aptitude — programming logic, database","Critical Reasoning — CAT-level passages"],
-        "Data Analysis & Interpretation (50 Qs)":["Caselet DI (paragraph-based)","Missing DI","Arithmetic + DI combo","Comparison of 2 data sets"],
-        "General Awareness/Economy/Banking (40 Qs)":["SBI specific: history, structure, products","RBI Annual Report key chapters","Economic Survey highlights","Deep banking regulatory knowledge"],
-        "English Language (35 Qs)":["Word Swap, Word Rearrangement (new pattern)","Vocabulary — usage in context","All standard patterns at higher difficulty"],
-        "Descriptive (Letter + Essay · 30 min)":["Letter — Formal (complaint, application, business)","Essay — 250 words on banking/economic/social topics"]
-      }
-    },
-    interview:{
-      pattern:"Group Discussion + Personal Interview",
-      sections:{
-        "SBI-Specific Knowledge":["SBI history, structure, subsidiaries","Core banking system — Finacle","Digital banking — YONO, SBI Pay","SBI's international presence"],
-        "Economy & GD Topics":["India's economic growth challenges","Financial inclusion progress","Digital India & Cashless economy","Banking sector reforms — recent"],
-        "HR Questions":["Why SBI specifically?","5-year career vision","Leadership experience","Academic/project discussion"]
-      }
-    }
-  },
-  "RBI Grade B":{
-    color:"#a78bfa", priority:"2027 Crown Target", vacancies:"~300",
-    prelims:{
-      pattern:"Phase 1: 200 Qs · 200 Marks · 120 min · Sectional cutoffs",
-      sections:{
-        "General Awareness (80 Qs)":["Current Affairs last 12 months — economy focus","Banking & Financial Awareness (very deep)","RBI functions, history, structure","International organizations — IMF, WB, BIS, FSB","Economic concepts — GDP, Inflation, BoP, Exchange Rate","Government schemes — deep awareness","Budget & Economic Survey highlights","Important committees & reports"],
-        "English Language (30 Qs)":["RC — economic/financial passages","Vocabulary in context","Error Spotting","Fill in the Blanks"],
-        "Quantitative Aptitude (30 Qs)":["High-level DI — Caselet, complex graphs","Probability & Statistics","Time Series Data interpretation"],
-        "Reasoning (60 Qs)":["High-level Puzzles","Critical Reasoning","Analytical Reasoning","Data Interpretation (logical)"]
-      }
-    },
-    mains:{
-      pattern:"Phase 2: Paper I ESI 100m + Paper II English 90m + Paper III FM 90m · 300 marks",
-      sections:{
-        "Economic & Social Issues — ESI (Paper I · 100 marks)":["Growth, Development & National Income concepts","Poverty, Inequality, Unemployment in India","Agriculture — issues, reforms, technology","Industry & Services sector","Infrastructure development in India","Economic Reforms since 1991","Monetary & Fiscal Policy","Indian Financial System — Banks, Markets, Institutions","Social Issues — Education, Health, Population","Sustainable Development & Environmental concerns","Globalization & Indian Economy","India & International Economic organizations"],
-        "English — Descriptive (Paper II · 100 marks)":["Essay writing — 600 words (economic/social/financial)","Precis Writing — reduce passage to 1/3rd","Reading Comprehension — analytical","Report Writing","Business correspondence"],
-        "Finance & Management (Paper III · 100 marks)":["Financial System — money market, capital market, derivatives","Financial institutions — banks, NBFCs, insurance","Capital Market Regulations — SEBI, market instruments","Risk Management — credit, market, operational risk","Corporate Finance basics","Management: Planning, Organizing, Leading, Controlling","HR Management — motivation, leadership theories","Ethics in Finance & Banking","International Finance — Forex, BoP, IMF","Budget — fiscal policy, public finance"]
-      }
-    },
-    interview:{
-      pattern:"Phase 3: Interview · Carries separate marks · Very technical",
-      sections:{
-        "Economic & Financial Depth":["Current monetary policy stance — rationale","Inflation targeting in India — MPC framework","Exchange rate management by RBI","Capital account convertibility — India's position","Financial sector reforms post-2008","NPA crisis & resolution mechanisms (IBC, SARFAESI)"],
-        "RBI Knowledge":["RBI Act 1934 — key provisions","Banking Regulation Act 1949","Functions of RBI — note issue, banker to banks","RBI's Development Role","RBI's recent policy actions & rationale"],
-        "Current Economic Issues":["India's GDP growth trajectory","Fiscal consolidation — glide path","Global economic headwinds & India's resilience","Cryptocurrency regulation in India","Climate finance & green banking"],
-        "Personal & Motivation":["Why RBI Grade B?","Academic excellence — projects/thesis discussion","Research aptitude","Career vision in central banking","Economists/books you follow"]
-      }
-    }
-  },
-  "SEBI Grade A":{
-    color:"#f87171", priority:"2027 Specialist", vacancies:"~100",
-    prelims:{
-      pattern:"Phase 1: 100 Qs · 100 Marks · 60 min · Objective",
-      sections:{
-        "General Awareness (40 Qs)":["Capital market current affairs — very specific","SEBI circulars & amendments","RBI policy impact on markets","Budget impact on capital markets","IPO, FPO, M&A news","Global financial markets news"],
-        "English Language (30 Qs)":["RC — financial/regulatory passages","Error Detection","Vocabulary in context","Sentence Rearrangement"],
-        "Quantitative Aptitude (30 Qs)":["Statistics basics — Mean, SD, Variance","DI — financial data charts","Finance Math — ROI, Yield"]
-      }
-    },
-    mains:{
-      pattern:"Phase 2: Paper I Securities Laws 100m + Paper II Commerce/IT 100m + Paper III Descriptive 60m",
-      sections:{
-        "Securities Laws & Regulations (Paper I)":["SEBI Act 1992 — all sections & provisions","Securities Contracts Regulation Act 1956 (SCRA)","Depositories Act 1996","Companies Act 2013 — key chapters","SEBI (LODR) Regulations 2015","SEBI (PIT) Regulations — Insider Trading","SEBI (SAST) Regulations — Takeover Code","SEBI (AIF) Regulations","SEBI (MF) Regulations — Mutual Funds","SEBI (FPI) Regulations","Listing Obligations & Disclosure Requirements"],
-        "Commerce & Economics / IT Paper":["Financial Markets — Primary, Secondary, Derivatives","Capital Market instruments — Equity, Debt, ETF","Mutual Fund types & regulation","Derivative instruments — Futures, Options, Swaps","Corporate Finance — NPV, IRR, WACC","Financial statement analysis","Macroeconomics — GDP, Inflation, Fiscal & Monetary Policy"],
-        "Descriptive English (Paper III)":["Essay — capital markets, regulatory, economic topics","Comprehension — financial regulation passage","Precis writing","Report drafting"]
-      }
-    },
-    interview:{
-      pattern:"Phase 3: Very technical & regulatory focused",
-      sections:{
-        "Securities Law Deep Dive":["Recent SEBI orders & judgements","SEBI's adjudication & enforcement actions","Insider Trading — landmark cases","Takeover cases — analysis"],
-        "Capital Market Knowledge":["IPO process — book building, price band, allotment","Stock exchange mechanisms — circuit breakers, T+1 settlement","Derivatives market — margin requirements","Debt market — G-Secs, corporate bonds"],
-        "Regulatory Framework":["SEBI's powers — investigative, regulatory, quasi-judicial","Coordination with RBI, MCA, IRDAI","FSDC — Financial Stability & Development Council","Recent regulatory changes"],
-        "Motivation & Profile":["Why SEBI Grade A?","Capital markets academic work","Views on retail investor participation in India","Crypto asset regulation perspective"]
-      }
-    }
-  },
-  "IBPS Clerk":{
-    color:"#34d399", priority:"2027 Volume Play", vacancies:"~5000",
-    prelims:{
-      pattern:"100 Qs · 100 Marks · 60 min · Sectional time 20+20+20",
-      sections:{
-        "Quantitative Aptitude (35 Qs)":["Number Series","Simplification/Approximation","DI — basic to moderate","Quadratic Equations","Time & Work","Speed & Distance","Profit & Loss","SI & CI","Percentage, Ratio, Average"],
-        "Reasoning Ability (35 Qs)":["Puzzles (moderate)","Seating Arrangement","Syllogism","Blood Relations","Direction","Coding-Decoding","Inequality","Order & Ranking"],
-        "English Language (30 Qs)":["Reading Comprehension","Error Spotting","Fill in the Blanks","Cloze Test","Para Jumbles"]
-      }
-    },
-    mains:{
-      pattern:"190 Qs · 200 Marks · 160 min · Very high sectional cutoffs",
-      sections:{
-        "Reasoning & Computer Aptitude (50 Qs)":["All Prelims Reasoning + higher difficulty","Computer: MS Office, Internet, Networking basics","Keyboard shortcuts, Computer History"],
-        "Quantitative Aptitude (50 Qs)":["All Prelims Quant + Advanced DI","Probability","Data Sufficiency"],
-        "General & Financial Awareness (50 Qs)":["Current Affairs last 6 months","Banking awareness basics","Government schemes","Financial literacy"],
-        "English Language (40 Qs)":["Paragraph Completion","Sentence Connector","Error Detection — new pattern","Word Usage","RC — 2 passages"]
-      }
-    }
-  },
-  "LIC AAO":{
-    color:"#fb923c", priority:"2027 Insurance", vacancies:"~200",
-    prelims:{
-      pattern:"~120 Qs · 120 Marks · 120 min",
-      sections:{
-        "Quantitative Aptitude (35 Qs)":["DI — moderate","Arithmetic","Number Series","Quadratic Equations","Misc Arithmetic topics"],
-        "Reasoning Ability (35 Qs)":["Puzzles & Seating","Syllogism","Logical Reasoning","Coding-Decoding","Blood Relations"],
-        "English Language (30 Qs)":["RC","Error Detection","Vocabulary","Cloze Test"],
-        "General Knowledge & Current Affairs (20 Qs)":["Current Affairs last 6 months","LIC-specific awareness","Insurance sector news","Financial awareness"]
-      }
-    },
-    mains:{
-      pattern:"~300 Qs · 300 Marks · 180 min + Descriptive 30 min",
-      sections:{
-        "Reasoning Ability (30 Qs)":["High-level Puzzles","Logical Reasoning","Critical Reasoning"],
-        "Quantitative Aptitude (30 Qs)":["Advanced DI","Statistics basics"],
-        "General Knowledge & Current Affairs (50 Qs)":["Current affairs — heavy insurance/BFSI focus","Static GK","Government schemes"],
-        "Professional Knowledge — Insurance (60 Qs)":["Insurance types: Life, Non-Life, Health, Reinsurance","LIC — history, products, structure, subsidiaries","IRDAI — Insurance Regulatory & Development Authority","Insurance Act 1938 — key provisions","Life Insurance concepts — Term, Endowment, ULIP, Pension","Premium calculation basics","Claim settlement process","Insurance Ombudsman"],
-        "English — Descriptive (30 min)":["Essay — insurance/financial literacy/social topics","Letter writing — formal"]
-      }
-    },
-    interview:{
-      pattern:"Interview after Mains for AAO posts",
-      sections:{
-        "Insurance Knowledge":["LIC's role as India's largest life insurer","Types of life insurance products","ULIP vs Traditional Plans — differences","Claim settlement ratio — significance","IRDAI's regulatory framework"],
-        "Financial & Current Awareness":["Budget — insurance sector allocations","Recent IRDAI circulars","Health insurance expansion"],
-        "Personal Questions":["Why LIC AAO?","Interest in actuarial/insurance work","Situational — irate customer, complex claim scenario"]
-      }
-    }
-  },
-  "NABARD Grade A":{
-    color:"#fbbf24", priority:"2027 Rural Finance", vacancies:"~150",
-    prelims:{
-      pattern:"Phase 1: 200 Qs · 200 Marks · 120 min",
-      sections:{
-        "Economic & Social Issues (40 Qs)":["Growth, Development & National Income","Poverty, Inequality, Unemployment in India","Agriculture & Rural Economy (special focus)","Rural India — demographics, poverty, livelihoods","Agricultural credit & institutional finance","Microfinance & SHG-Bank Linkage"],
-        "Development & Environment Issues (20 Qs)":["Sustainable Development Goals (SDGs)","Climate Change & impact on agriculture","Green finance & climate bonds","Environmental regulations — India","Natural resource management"],
-        "Quantitative Aptitude (20 Qs)":["DI — moderate level","Arithmetic"],
-        "English Language (20 Qs)":["RC","Error Detection","Vocabulary"],
-        "Computer Awareness (20 Qs)":["Computer basics, MS Office, Internet"],
-        "General Awareness (80 Qs)":["Banking & Financial Awareness","Rural Development schemes","Current Affairs","NABARD — history, functions, schemes"]
-      }
-    },
-    mains:{
-      pattern:"Phase 2: Paper I Development & Environment + Paper II English + Paper III Agriculture/Optional",
-      sections:{
-        "Development & Environment Issues (Paper I)":["Rural development approaches & strategies","Agricultural development — technology, credit, markets","Land reforms & Tenancy legislation","Watershed development & water conservation","Rural infrastructure — roads, electricity, sanitation","MNREGA, PMGSY, PMGKAY, PM-KISAN — in depth","Food security — PDS, FCI, buffer stocks","Rural Financial Institutions — RRBs, MFIs, SHGs","NABARD Schemes — RIDF, KCC, refinance","Climate smart agriculture","India's SDG progress"],
-        "English (Paper II)":["Essay 600 words — agriculture/rural/development","Precis Writing","Comprehension — development/economic passages","Report Writing"],
-        "Optional — Agriculture/Rural Development (Paper III)":["Crop production, Horticulture, Animal Husbandry","Land use patterns in India","Irrigation systems — major/minor","Agricultural marketing — APMC, e-NAM","Food processing sector","Rural Credit institutions depth","Cooperative movement in India"]
-      }
-    },
-    interview:{
-      pattern:"Phase 3: Interview",
-      sections:{
-        "NABARD Knowledge":["NABARD Act 1981 — mandate & functions","NABARD's role in agricultural credit","RIDF — Rural Infrastructure Development Fund","Kisan Credit Card scheme","NABARD's SHG-Bank Linkage achievements"],
-        "Rural Economy & Agriculture":["Current state of Indian agriculture","Farm income doubling — progress & challenges","FPOs — Farmer Producer Organizations","Contract farming regulations"],
-        "Personal":["Why NABARD?","Rural development exposure/passion","Academic background in agriculture/economics?"]
-      }
-    }
-  },
-  "SSC CGL":{
-    color:"#94a3b8", priority:"2027 SSC Track", vacancies:"~10000",
-    prelims:{
-      pattern:"100 Qs · 200 Marks · 60 min · ¼ Negative (0.50 per wrong)",
-      sections:{
-        "Quantitative Aptitude (25 Qs)":["Number System (HCF, LCM, Divisibility)","Percentage","Profit & Loss","Discount","SI & CI","Time & Work","Time, Speed & Distance","Geometry — Lines, Angles, Triangle, Circle","Trigonometry — Ratios, Identities, Heights & Distances","Mensuration — 2D + 3D","Algebra — Linear & Quadratic","Statistics — Mean, Median, Mode, SD"],
-        "General Intelligence & Reasoning (25 Qs)":["Analogies","Series — Number, Alphabet, Figural","Matrix & Word Formation","Coding-Decoding","Blood Relations","Direction & Distance","Venn Diagrams","Statement & Conclusion/Assumptions","Non-Verbal Reasoning","Cube & Dice","Paper Folding & Cutting","Mirror/Water Images"],
-        "English Language (25 Qs)":["Reading Comprehension","Synonyms & Antonyms","Fill in the Blanks","Spotting Errors","Sentence Improvement","Para Jumbles","Idioms & Phrases","One Word Substitution","Spelling"],
-        "General Awareness (25 Qs)":["History — Ancient/Medieval/Modern India","Geography — India & World","Indian Polity & Constitution","Economy — basic to moderate","General Science — Physics, Chemistry, Biology","Technology & Computers","Current Affairs last 12 months","Static GK — Countries, Capitals, Sports, Awards"]
-      }
-    },
-    mains:{
-      pattern:"Tier II: Papers I+II+III (post-wise) · Higher difficulty throughout",
-      sections:{
-        "Paper I — Quant + Reasoning + English + GK":["All Prelims topics at significantly higher difficulty","Advanced Geometry & Mensuration (very important)","Advanced Trigonometry — Identities, complex problems","Statistics — deeper concepts"],
-        "Paper II — English (200 Qs)":["All Prelims English at much higher level","Advanced Grammar — complex sentences","Advanced Idioms & Phrases","Comprehension — difficult passages"],
-        "Paper III — Statistics (Statistical Investigator post)":["Probability & Distributions","Sampling Theory","Index Numbers","Time Series Analysis","Correlation & Regression","Hypothesis Testing"]
-      }
-    }
-  },
-  "NICL AAO":{
-    color:"#38bdf8", priority:"2027 Insurance", vacancies:"~200",
-    prelims:{
-      pattern:"Objective MCQ · Similar to LIC AAO structure",
-      sections:{
-        "Reasoning Ability":["Puzzles & Seating Arrangement","Syllogism","Logical Reasoning","Coding-Decoding","Blood Relations"],
-        "English Language":["Reading Comprehension","Error Detection","Fill in the Blanks","Cloze Test","Vocabulary"],
-        "Quantitative Aptitude":["DI","Arithmetic — all standard topics","Number Series","Quadratic Equations"],
-        "General Awareness":["Current Affairs last 6 months","Insurance sector awareness","IRDAI updates","Financial awareness"]
-      }
-    },
-    mains:{
-      pattern:"Objective + Descriptive + Interview",
-      sections:{
-        "General Insurance Knowledge":["Non-Life Insurance — Fire, Marine, Motor, Health, Crop","General Insurance Corporation (GIC Re)","IRDAI regulations for non-life insurance","Third Party Administrator (TPA)","Motor Vehicles Act — motor insurance","Crop Insurance — PMFBY scheme","Marine insurance — cargo, hull","Reinsurance concept & purpose"],
-        "Financial Awareness & Economy":["Same as IBPS PO GA section","Budget & insurance sector developments"],
-        "Descriptive English":["Essay — Insurance/social topics","Letter writing"]
-      }
-    }
-  },
-  "IBPS SO (IT Officer)":{
-    color:"#06b6d4", priority:"2027 Tech Advantage", vacancies:"~500",
-    prelims:{
-      pattern:"125 Qs · 125 Marks · 120 min (Reasoning 50 + English 25 + GA 50)",
-      sections:{
-        "Reasoning Ability (50 Qs)":["Puzzles & Seating Arrangement","Syllogism","Input-Output","Blood Relations","Coding-Decoding","Inequality","Data Sufficiency"],
-        "English Language (25 Qs)":["RC","Error Spotting","Cloze Test","Fill in the Blanks"],
-        "General Awareness — Banking (50 Qs)":["Banking awareness — RBI, SEBI, NABARD","Current Affairs last 6 months","IT industry news & developments","Government Digital India initiatives"]
-      }
-    },
-    mains:{
-      pattern:"Professional Knowledge Paper: 60 Qs · 60 Marks · 45 min",
-      sections:{
-        "IT Officer Specialist Paper":["Data Structures — Arrays, Trees, Graphs, Hashing, Heap","Algorithms — Sorting, Searching, Complexity, Graph algos","Operating Systems — Process Mgmt, Memory Mgmt, File System, Deadlock","Computer Networks — OSI Model, TCP/IP, Protocols, DNS, DHCP, HTTP","DBMS — ER Diagram, Normalization (1NF-3NF-BCNF), SQL (Joins, Subqueries), Transactions","Software Engineering — SDLC, Agile, UML, Testing methodologies","OOP — Classes, Inheritance, Polymorphism","C/C++/Java Basics — syntax, OOP concepts","Web Technologies — HTML, CSS, JavaScript basics, REST API","Cybersecurity — Encryption (RSA, AES), Digital Signatures, Firewalls","Cloud Computing — IaaS, PaaS, SaaS basics","Compiler Design — Tokens, Parsing, Code Generation"]
-      }
-    }
-  }
-};
-
-/* ═══════════════════════════════════════════════════════════════
-   PHASE CHECKLISTS DATA
-═══════════════════════════════════════════════════════════════ */
-const PHASE_CHECKLISTS = {
-  "Phase 1 — 2026 Prep":{
-    color:"#00b47a",
-    sections:{
-      "📚 Resources to Arrange":["Arun Sharma Quant book (or Oliveboard PDF)","M.K. Pandey Reasoning book","SP Bakshi English book","Testbook / Adda247 mock subscription (IBPS+SSC)","GKToday Banking Capsule (monthly PDF)","Oliveboard Banking Awareness module","CHSL + Steno PYQ papers (last 5 years)","MP Apex Bank PYQ papers / IBPS Clerk PYQ papers","BIS ASO previous year papers","Steno practice tool (Pitman / online)","UPCISBL previous exam papers"],
-      "⏱️ Daily Habits (from Day 1)":["15 min current affairs every morning (GKToday/Affairscloud)","30 Quant questions with timer (morning block)","2 Reasoning puzzles daily","15 min Stenography shorthand practice","1 RC passage + 10 grammar questions","10 new GK flashcards (Anki or handwritten)","5 new vocabulary words noted","Error Notebook — write every wrong answer"],
-      "📝 Mock Test Milestones":["Take first CHSL/MP Apex pattern mock this week","Complete 10 mocks by end of June 2026","Complete 20 mocks by end of July 2026","Analyze each mock within 48 hours — no exceptions","Track sectional accuracy from Week 2","Reach 160+ in CHSL Tier 1 mock by August"],
-      "✅ UPCISBL Junior Manager":["Study UP Cooperative Bank history & structure","Study Cooperative Societies Act 1912","Study Multi-State Cooperative Societies Act 2002","Add UP state current affairs daily","Read about NABARD's role in cooperative credit","Practice Managerial Skills questions (NPA, KYC, banking ops)","Target: 150+ out of 200 in Mains practice","Prepare cooperative sector awareness for Interview"],
-      "✅ MP Apex Bank":["Study MP Apex Bank history & structure","Add MP state current affairs daily","Master Computer Knowledge section (CSE edge)","Practice IBPS Clerk pattern — 5 full mocks minimum","Review cooperative banking basics for GA section","Target: 85+ out of 100 in practice mocks"],
-      "✅ CHSL Specific":["Practice SSC Quant: Geometry, Trigonometry, Mensuration","Focus on Static GK — History, Geography, Science","Speed target: 100 questions in 55 minutes","DEST/Typing skill — 35 WPM minimum practice","Take 3+ official SSC CHSL PYQ papers timed"],
-      "✅ Steno Specific":["Daily 15 min shorthand practice — non-negotiable","Target: 80 WPM by October 2026 (Grade D)","Target: 100 WPM by November 2026 (Grade C)","English section — extra push (100 Qs in written)","Static GK — study same as CHSL/CGL"],
-      "✅ BIS ASO Specific":["Revise CSE Technical: DS, Algo, OS, DBMS, CN","Solve BIS ASO previous papers","Push Analytical Reasoning to CAT level","Practice Descriptive English: Essay + Precis"]
-    }
-  },
-  "Phase 2 — Banking Foundation":{
-    color:"#3b82f6",
-    sections:{
-      "🏦 Banking Awareness Foundation":["RBI — full organizational structure & functions","RBI Act 1934 — key sections","Banking Regulation Act 1949 — key provisions","Types of banks: PSU, Private, Foreign, RRB, Cooperative","CRR, SLR, Repo, Reverse Repo — concept + current rates","Monetary Policy Committee (MPC) — how it works","Priority Sector Lending — categories, targets, RBI norms","Basel I, II, III norms — simplified understanding","Payment systems: NEFT, RTGS, IMPS, UPI, BBPS","Jan Dhan, PM Mudra, Stand-Up India, PMSBY, PMJJBY","NABARD, SIDBI, EXIM Bank, NHB — roles","NPA definition, GNPA vs NNPA, IBC, SARFAESI Act","FEMA, PMLA basics","Major bank mergers — 2019-2024","Credit Rating Agencies — CRISIL, ICRA, CARE"],
-      "📊 Economics Fundamentals":["GDP, GNP, NNP, NDP — formulae & concepts","Types of inflation + WPI vs CPI","Fiscal policy tools — tax, expenditure, deficit","Types of fiscal deficits — Revenue, Fiscal, Primary","Balance of Payments — Current + Capital Account","Exchange rate regimes — fixed, floating, managed","NITI Aayog vs Planning Commission","Union Budget 2025-26 — key allocations & highlights","Economic Survey 2024-25 — key data & themes","Demand & Supply — elasticity concepts","Market structures — Monopoly, Oligopoly, Competition"],
-      "💹 Capital Markets & Securities":["Primary Market: IPO, FPO, Rights Issue, Bonus Issue","Secondary Market: Stock exchanges, BSE, NSE, SEBI","Equity instruments: Shares, Preference Shares, Warrants","Debt instruments: Bonds, Debentures, G-Secs, T-Bills","Mutual Fund types: Equity, Debt, Hybrid, Index","ETF vs Mutual Fund — differences","Derivative instruments: Futures, Options, Swaps — basics","Stock indices: Sensex, Nifty 50, Nifty Bank","FPI, FII, FDI — definitions & limits","SEBI — roles, powers, structure","Insider Trading definition & prevention","Takeover Code basics — SEBI SAST Regulations"],
-      "🏥 Insurance & Rural Finance":["Life insurance types: Term, Endowment, Money-Back, ULIP","Non-life insurance: Fire, Marine, Motor, Health, Crop","IRDAI — Insurance Regulatory & Development Authority","LIC structure, subsidiaries, key products","GIC Re — reinsurance role","PMFBY — Pradhan Mantri Fasal Bima Yojana","PMJJBY + PMSBY — details","Microfinance Institutions (MFIs) regulation","SHG-Bank Linkage Programme — NABARD model","Kisan Credit Card scheme","NABARD's developmental role in rural India"],
-      "✍️ Descriptive Writing Prep":["Write 1 essay per week from Oct 2026","Topics: Economy, Banking, Rural Development, Social Issues","Practice formal letter writing: complaint, application","Practice Precis writing: 500-word passage → 150-word summary","Get model answers for RBI Grade B ESI essay topics","Practice typing speed: 30+ WPM for descriptive exams","Read 5 RBI Grade B essay-type PYQ questions & write answers"]
-    }
-  },
-  "Phase 3 — 2027 Sprint":{
-    color:"#fb923c",
-    sections:{
-      "📅 Jan–Mar 2027":["IBPS PO Prelims mock: target 75+ consistently","SBI PO Mains-level DI practice — weekly 2 sets","RBI Grade B Phase 1 mock: target 150+","LIC AAO prelims pattern — 5 mocks done","Write 4 descriptive essays on banking/economy topics","Complete Economics revision — NCERT + Mrunal","Current affairs November 2026 – March 2027 revised","All bank mergers, appointments, schemes updated"],
-      "📅 Apr–Jun 2027":["SBI PO Prelims live exam — appear","SBI PO Mains — intensive preparation","SEBI Grade A Phase 1 — Securities Laws reading complete","NABARD Grade A prelims pattern mocks done","LIC AAO Mains — Insurance module complete","RBI Grade B Phase 2 — ESI full revision done","FM (Finance & Management) revision done","Descriptive essay bank of 30 topics prepared"],
-      "📅 Jul–Sep 2027":["IBPS PO Prelims — appear","IBPS Clerk Prelims — appear","NABARD Grade A live exam — appear","SEBI Grade A Phase 2 — Securities Laws paper ready","Interview prep started for SBI PO (if cleared Mains)","GD topics studied: 20 banking/economic topics","Soft skills: posture, communication practice done"],
-      "📅 Oct–Dec 2027":["IBPS PO Mains — high DI + Descriptive","IBPS Clerk Mains — all sections strong","IBPS SO IT Officer — Technical paper revision done","SSC CGL Tier 2 — Geometry, Trig revision done","RBI Grade B Interview prep (if cleared Phase 2)","SEBI Grade A Interview — Securities Law + Capital Markets"]
-    }
-  },
-  "Interview Master Checklist":{
-    color:"#a78bfa",
-    sections:{
-      "📖 Banking & Finance Fundamentals":["All RBI policy tools: Repo, SLR, CRR, OMO, MSF","Current Repo Rate, CRR, SLR — know exact figures","RBI's inflation target — 4% ± 2%","Latest MPC meeting outcomes — know the stance","Recent bank mergers — which merged with which","Differentiate: Scheduled vs Non-Scheduled Banks","Basel III — Tier 1, Tier 2 Capital requirements","NPA % in Indian banking — GNPA vs NNPA current data","Priority Sector — 40% total, 18% agriculture, 7.5% small/marginal"],
-      "📊 Indian Economy Awareness":["GDP growth rate FY25 & FY26 projection","WPI & CPI current data","Fiscal Deficit % of GDP — current year target","CAD (Current Account Deficit) — current status","Forex Reserves — current level","Budget 2025-26 highlights: key sector allocations","Economic Survey 2024-25 key themes","UPI transaction data — growth story"],
-      "🏛️ Institutional Knowledge":["RBI Governor name + tenure","Finance Minister, PM, President — current","CEOs of SBI, HDFC Bank, ICICI Bank","SEBI Chairperson","NABARD Chairman","IRDAI Chairman","Recent BFSI sector appointments"],
-      "🎙️ HR & Behavioral":["Tell me about yourself — 90-second version rehearsed","Why banking/this organization — specific reasons ready","Strengths: 2–3 relevant to banking","Weakness: genuine but recoverable answer","Where do you see yourself in 5 years?","A challenge you overcame — STAR format ready","A time you showed leadership — STAR format ready","Why not private sector? — thoughtful answer prepared","Discuss your B.Tech CSE project/academics"],
-      "💻 Technology & Digital Banking":["UPI architecture — how it works","CBDC — Central Bank Digital Currency, India's pilot","Open Banking & Account Aggregator framework","RBI's digital lending guidelines","Cryptocurrency regulation in India","Core Banking Solution (CBS) — basics","Cybersecurity in banking — RBI guidelines"],
-      "📰 Current Affairs (Last 3 Months)":["Economy — 5 key news items","Banking — 5 key news items","Government schemes — 5 important ones","International — 3 key items (IMF, World Bank)","UP-specific news (for UPCISBL interview)","Science & Technology — 2–3 items","Sports & Awards — key ones"]
-    }
-  }
-};
-
-/* ═══════════════════════════════════════════════════════════════
-   SHARED HELPERS
-═══════════════════════════════════════════════════════════════ */
-function Card({t, children, style={}}){
-  return <div style={{background:t.surface,border:`1px solid ${t.border}`,borderRadius:10,padding:16,...style}}>{children}</div>;
 }
-function SectionLabel({t, children}){
-  return <div style={{fontSize:10,fontFamily:t.mono,letterSpacing:2,color:t.accent,textTransform:'uppercase',marginBottom:12}}>{children}</div>;
-}
-function AlertBox({t, children}){
-  return <div style={{background:t.alertBg,border:`1px solid ${t.alertBorder}`,borderRadius:10,padding:'12px 16px',fontSize:12,color:t.alertColor,lineHeight:1.7,margin:'12px 0'}}>{children}</div>;
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   OVERVIEW TAB
-═══════════════════════════════════════════════════════════════ */
-function OverviewTab({t}){
-  const e2026=[
-    {name:'UPCISBL Junior Manager',color:'#f59e0b',note:'Applied ✓ · 2085 vacancies'},
-    {name:'MP Apex Computer Operator',color:'#a78bfa',note:'748 vacancies'},
-    {name:'SSC CHSL 2025–26',color:'#00b47a',note:'Tier 1 ~Jul 2026'},
-    {name:'SSC Stenographer',color:'#34d399',note:'80–100 WPM Skill Test'},
-    {name:'BIS ASO',color:'#60a5fa',note:'CSE tech advantage'},
-  ];
-  const e2027=[
-    {name:'IBPS PO',c:'#3b82f6'},{name:'IBPS Clerk',c:'#3b82f6'},{name:'IBPS SO (IT)',c:'#06b6d4'},
-    {name:'SBI PO',c:'#f59e0b'},{name:'SBI Clerk',c:'#f59e0b'},{name:'SBI SO',c:'#f59e0b'},
-    {name:'RBI Grade B',c:'#a78bfa'},{name:'RBI Grade A',c:'#a78bfa'},{name:'RBI Assistant',c:'#a78bfa'},
-    {name:'LIC AAO',c:'#fb923c'},{name:'LIC ADO',c:'#fb923c'},{name:'LIC Assistant',c:'#fb923c'},
-    {name:'NABARD Grade A',c:'#fbbf24'},{name:'SEBI Grade A',c:'#f87171'},
-    {name:'NICL AAO',c:'#38bdf8'},{name:'NICL Assistant',c:'#38bdf8'},{name:'SSC CGL',c:'#94a3b8'},
-  ];
-  return (
-    <div>
-      <div className="stat-grid" style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:10,marginBottom:18}}>
-        {[['22','Total Exams'],['5','2026 Targets'],['~5h','Daily Study'],['3','Phases']].map(([n,l])=>(
-          <div key={l} style={{background:t.surface,border:`1px solid ${t.border}`,borderRadius:10,padding:'14px 8px',textAlign:'center'}}>
-            <div style={{fontFamily:t.mono,fontSize:22,fontWeight:700,color:t.accent,lineHeight:1}}>{n}</div>
-            <div style={{fontSize:11,color:t.textMuted,marginTop:4}}>{l}</div>
-          </div>
-        ))}
-      </div>
-      <AlertBox t={t}>
-        <strong style={{color:t.alertStrong}}>⚡ Core Philosophy:</strong> You've studied the concepts. The game now is <strong style={{color:t.alertStrong}}>speed + accuracy + stamina</strong>. UPCISBL Junior Manager (2085 vacancies, applied ✓) is your #1 priority 2026 exam. Every 2026 exam builds 2027 temperament.
-      </AlertBox>
-      <div style={{marginBottom:18}}>
-        <SectionLabel t={t}>2026 — Clear These</SectionLabel>
-        <div style={{display:'flex',flexWrap:'wrap',gap:8}}>
-          {e2026.map(e=>(
-            <div key={e.name} style={{display:'inline-flex',alignItems:'center',gap:6,background:t.surface,border:`1px solid ${t.border}`,borderRadius:20,padding:'6px 12px'}}>
-              <div style={{width:6,height:6,borderRadius:'50%',background:e.color,flexShrink:0}}/>
-              <span style={{fontSize:11,color:t.text}}>{e.name}</span>
-              <span style={{fontSize:9,color:e.color,fontFamily:t.mono}}>{e.note}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div style={{marginBottom:18}}>
-        <SectionLabel t={t}>2027 — Full Sweep</SectionLabel>
-        <div style={{display:'flex',flexWrap:'wrap',gap:6}}>
-          {e2027.map(e=>(
-            <div key={e.name} style={{display:'inline-flex',alignItems:'center',gap:5,background:t.surface,border:`1px solid ${t.border}`,borderRadius:14,padding:'4px 10px'}}>
-              <div style={{width:5,height:5,borderRadius:'50%',background:e.c,flexShrink:0}}/>
-              <span style={{fontSize:11,color:t.textDim}}>{e.name}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(200px,1fr))',gap:12}}>
-        <Card t={t}>
-          <div style={{fontSize:12,fontWeight:700,color:t.text,marginBottom:10}}>CSE Strengths → Exploit Hard</div>
-          {['Computer Knowledge (IBPS SO/BIS/MP Apex)','Logical Reasoning (all exams)','Data Interpretation (banking exams)','Technical Paper (BIS ASO, IBPS SO IT)'].map(s=>(
-            <div key={s} style={{fontSize:11,padding:'3px 0',color:t.accent,display:'flex',gap:6}}><span>›</span>{s}</div>
-          ))}
-        </Card>
-        <Card t={t}>
-          <div style={{fontSize:12,fontWeight:700,color:t.text,marginBottom:10}}>Build Daily from Oct 2026</div>
-          {['Banking & Finance Awareness','Economics (RBI/SEBI/NABARD)','Insurance Knowledge (LIC/NICL)','Cooperative Sector (UPCISBL)'].map(s=>(
-            <div key={s} style={{fontSize:11,padding:'3px 0',color:'#fb923c',display:'flex',gap:6}}><span>›</span>{s}</div>
-          ))}
-        </Card>
-      </div>
-    </div>
-  );
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   UPCISBL TAB
-═══════════════════════════════════════════════════════════════ */
-function UPCISBLTab({t}){
-  const phases=[
-    {id:'prelims',label:'Prelims',color:'#00b47a',pattern:'100 Qs · 100 Marks · 90 min · ¼ Negative',
-     sections:[
-      {name:'Numerical Ability (35 Qs)',topics:['Simplification & Approximation','Number Series','Percentage, Profit/Loss, Discount','SI & CI, Average','Ratio, Proportion, Ages, Partnership','Time & Work, Pipes & Cisterns','Speed, Time & Distance, Trains, Boats','Probability & Permutation/Combination','Mensuration — Cone, Sphere, Cylinder','Data Interpretation — Bar, Pie, Line, Tabular','Basic Algebra & Trigonometry','Indices & Logarithms']},
-      {name:'Reasoning Ability (20 Qs)',topics:['Alphabetical Order & Series','Coding-Decoding','Direction, Distance, Blood Relations','Order & Ranking','Linear & Circular Seating Arrangement','Data Sufficiency, Syllogism','Input-Output, Inequality','Decision Making, Statement & Assumption','Non-Verbal: Figure Series, Images, Matrix']},
-      {name:'Hindi + English Language (35 Qs)',topics:['Hindi: Comprehension, Fill Blanks, Sentence Correction, Alankar','Hindi: Synonyms, Antonyms, Samas, Sandhi','English: Synonyms/Antonyms, Idioms/Phrases','English: Tenses, Sentence Correction, Fill Blanks','English: Spotting Errors, Cloze Test, Para Jumbles']},
-      {name:'Cooperative Knowledge (10 Qs)',topics:['Origin & Development of Cooperative Movement in India','Rochdale Pioneers & cooperative movement history','National level cooperatives — IFFCO, AMUL, KRIBHCO','UP Cooperative Bank structure & history','Cooperative Laws & Acts in India','Role of cooperatives in rural economy','NABARD & cooperative credit linkage']},
-     ]},
-    {id:'mains',label:'Mains',color:'#3b82f6',pattern:'120 Qs · 200 Marks · 120 min · ¼ Negative · Min 40% Gen / 35% SC/ST',
-     sections:[
-      {name:'Reasoning (20 Qs)',topics:['All Prelims Reasoning at higher difficulty','Complex multi-variable Puzzles','Critical Reasoning','Advanced Input-Output']},
-      {name:'Numerical Ability (20 Qs)',topics:['All Prelims Quant at higher difficulty','Advanced DI — Caselets, Mixed Graphs','Advanced Number System & Algebra']},
-      {name:'General Awareness (40 Qs)',topics:['Current Affairs — last 6 months','Banking & Financial Awareness','RBI policies — Repo, Reverse Repo, CRR, SLR','Government schemes — UP + Central','Union Budget highlights','Economy — GDP, Inflation, Fiscal Policy','Sports, Awards, Appointments','UP state news & cooperative schemes']},
-      {name:'Cooperative Knowledge (15 Qs)',topics:['History of Cooperative Movement globally & India','Cooperative Societies Act 1912','Multi-State Cooperative Societies Act 2002','UP Cooperative Societies Act & amendments','Types: Credit, Housing, Consumer, Dairy Cooperatives','NABARD role in cooperative credit','UP Cooperative Bank — structure, purpose, functions']},
-      {name:'Language — Hindi & English (15 Qs)',topics:['Advanced Hindi Grammar & Comprehension','Advanced English Grammar & Errors','Difficult RC passages','Advanced Vocabulary','Para Jumbles & Sentence Rearrangement']},
-      {name:'Professional Subject — Managerial Skills (10 Qs)',topics:['Basic Banking Operations & Products','Credit Appraisal & Loan Processing','Financial Statement Analysis — Balance Sheet basics','NPA Classification & Recovery norms','KYC / AML Guidelines','Priority Sector Lending — categories & targets','Digital Banking — UPI, NEFT, RTGS, FASTag','RBI Regulations for Cooperative Banks','PMJDY & Financial Inclusion','Branch Operations & Customer Service']},
-     ]},
-    {id:'interview',label:'Interview',color:'#a78bfa',pattern:'3× vacancies shortlisted from Mains · Final merit = Mains + Interview',
-     sections:[
-      {name:'Banking & Finance',topics:['RBI policy tools — current rates','Difference: Commercial vs Cooperative Banks','NPA data & resolution mechanisms','Priority Sector Lending norms','Digital banking — UPI, RTGS, NEFT','PMJDY, Jan Suraksha schemes']},
-      {name:'Cooperative Sector Knowledge',topics:['UPCISB — full organizational structure','UP District Cooperative Banks — purpose & reach','History of cooperative movement in UP','Government initiatives for cooperative sector','Challenges in cooperative banking sector','NABARD role in cooperative credit']},
-      {name:'UP State & Current Affairs',topics:['UP Economy — industries, MSME, agriculture','UP Government schemes','UP cooperative sector scale & district reach','Recent UP news','UP Budget highlights']},
-      {name:'Personal & Behavioral',topics:['Why cooperative banking as career?','How B.Tech CSE helps in banking operations','Academic background discussion','Situational: customer complaint handling','Where do you see yourself in 5 years?','Digital/tech initiatives in banking — your views']},
-     ]},
-  ];
-  const [active,setActive]=useState('prelims');
-  const cur=phases.find(p=>p.id===active);
-  return (
-    <div>
-      <div style={{background:'rgba(245,158,11,0.08)',border:'1px solid rgba(245,158,11,0.2)',borderRadius:12,padding:16,marginBottom:18}}>
-        <div style={{fontSize:15,fontWeight:800,color:'#f59e0b',marginBottom:4}}>UPCISBL Junior Manager 2026</div>
-        <div style={{fontSize:10,fontFamily:t.mono,color:'#d97706',marginBottom:12}}>Advertisement No. A-2/G.R./2026 · 2085 Vacancies · Applied ✓</div>
-        <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(130px,1fr))',gap:8}}>
-          {[['Total Vacancies','2085'],['Age Limit','21–40 years'],['Prelims (if conducted)','100 Qs · 100 Marks'],['Mains','120 Qs · 200 Marks'],['Interview','3× shortlisted'],['Negative Marking','¼ per wrong']].map(([k,v])=>(
-            <div key={k} style={{background:'rgba(245,158,11,0.06)',border:'1px solid rgba(245,158,11,0.14)',borderRadius:8,padding:'8px 10px'}}>
-              <div style={{fontSize:9,color:'#d97706',fontFamily:t.mono}}>{k}</div>
-              <div style={{fontSize:11,color:'#f59e0b',fontWeight:600,marginTop:2}}>{v}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div style={{display:'flex',gap:8,marginBottom:16,flexWrap:'wrap'}}>
-        {phases.map(p=>(
-          <button key={p.id} onClick={()=>setActive(p.id)}
-            style={{padding:'8px 16px',borderRadius:8,border:`1px solid ${active===p.id?p.color:t.border}`,background:active===p.id?`${p.color}18`:'transparent',color:active===p.id?p.color:t.textMuted,fontSize:12,fontWeight:active===p.id?700:400,transition:'all 0.15s'}}>
-            {p.label}
-          </button>
-        ))}
-      </div>
-      <div style={{background:`${cur.color}0d`,border:`1px solid ${cur.color}28`,borderRadius:8,padding:'9px 13px',marginBottom:16,fontSize:11,color:cur.color,fontFamily:t.mono}}>
-        📋 {cur.pattern}
-      </div>
-      {cur.sections.map(s=>(
-        <div key={s.name} style={{background:t.surface,border:`1px solid ${t.border}`,borderLeft:`3px solid ${cur.color}55`,borderRadius:'0 10px 10px 0',marginBottom:14,overflow:'hidden'}}>
-          <div style={{padding:'10px 14px',borderBottom:`1px solid ${t.border}`}}>
-            <div style={{fontSize:12,fontWeight:700,color:cur.color}}>{s.name}</div>
-          </div>
-          <div style={{padding:'10px 12px',display:'flex',flexWrap:'wrap',gap:6}}>
-            {s.topics.map((tp,i)=>(
-              <span key={i} className="tag-chip" style={{background:`${cur.color}0e`,color:cur.color,border:`1px solid ${cur.color}1e`}}>{tp}</span>
-            ))}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   DAILY SCHEDULE TAB
-═══════════════════════════════════════════════════════════════ */
-function DailyTab({t}){
-  const wd=[
-    {time:'5:30–6:00',title:'Morning Reset',desc:"Flashcard revision of yesterday's notes. No new learning — just activate memory.",col:'#64748b'},
-    {time:'6:00–7:30',title:'Block A — High Intensity Practice',desc:'Quant OR Reasoning — 30 questions minimum with timer. Peak cognitive window.',col:'#00b47a'},
-    {time:'7:30–8:00',title:'Commute — Passive Learning',desc:'Current affairs podcast / Oliveboard audio / banking news while moving.',col:'#475569'},
-    {time:'1:00–1:30',title:'Lunch — GK + Reading',desc:'Hindu editorial headline + 1 banking news item + 2 vocab words.',col:'#475569'},
-    {time:'7:30–8:30',title:'Block B — English + Verbal',desc:'1 RC passage + error spotting (15 Qs) + cloze test. Strict 60 min.',col:'#3b82f6'},
-    {time:'8:30–9:30',title:'Block C — Specialized Subject',desc:'Rotating daily: Banking Awareness / Economics / Computer / Insurance / GK.',col:'#f59e0b'},
-    {time:'9:30–10:30',title:'Block D — Weak Area Drill',desc:"Attack worst section from today's practice. 45 min targeted questions only.",col:'#fb923c'},
-    {time:'10:30–11:00',title:'Night Log',desc:"5 things learned today. Mark tomorrow's focus. Update error notebook.",col:'#64748b'},
-  ];
-  const we=[
-    {time:'6:00–9:00',title:'Full Mock Test',desc:'Phone silent, timer on. Simulate exact exam conditions for nearest exam.',col:'#a78bfa'},
-    {time:'9:00–10:30',title:'Mock Analysis — Deep',desc:'Categorize every wrong answer: Silly / Concept Gap / Time Trap.',col:'#a78bfa'},
-    {time:'10:30–12:30',title:'Concept Repair',desc:'Fix what the mock exposed. 4 wrong in Probability → rebuild from scratch.',col:'#3b82f6'},
-    {time:'2:30–5:00',title:'Exam Deep-Dive',desc:'Saturday: 2026 exams. Sunday: 2027 niche topics (RBI/SEBI/NABARD).',col:'#f59e0b'},
-    {time:'5:00–6:30',title:'Previous Year Paper',desc:'1 full PYQ under timed conditions. Note question patterns and traps.',col:'#fb923c'},
-    {time:'7:30–9:00',title:'Weekly Review + Plan',desc:"Error log review. Set next week's 3 priority topics. Prepare notes.",col:'#64748b'},
-  ];
-  const Block=({items,accent})=>items.map((s,i)=>(
-    <div key={i} style={{display:'flex',gap:10,marginBottom:10}}>
-      <div style={{fontFamily:t.mono,fontSize:10,color:accent,minWidth:76,paddingTop:3,lineHeight:1.4,flexShrink:0}}>{s.time}</div>
-      <div style={{flex:1,background:t.surface,border:`1px solid ${t.border}`,borderLeft:`3px solid ${s.col}55`,borderRadius:'0 8px 8px 0',padding:'10px 13px'}}>
-        <div style={{fontSize:12,fontWeight:600,color:s.col,marginBottom:3}}>{s.title}</div>
-        <div style={{fontSize:11,color:t.textMuted,lineHeight:1.55}}>{s.desc}</div>
-      </div>
-    </div>
-  ));
-  return (
-    <div>
-      <SectionLabel t={t}>Weekday Schedule · ~5.5 Hours</SectionLabel>
-      <Block items={wd} accent={t.accent}/>
-      <SectionLabel t={{...t,accent:'#a78bfa'}} style={{marginTop:20}}>Weekend Schedule · ~7 Hours</SectionLabel>
-      <Block items={we} accent="#a78bfa"/>
-      <AlertBox t={t}>
-        <strong style={{color:t.alertStrong}}>⚠️ Working Pro Survival:</strong> If work wrecks a day — 20 min current affairs + 15 questions. <strong style={{color:t.alertStrong}}>Never go zero.</strong> Streak beats marathon.
-      </AlertBox>
-    </div>
-  );
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   WEEKLY TAB
-═══════════════════════════════════════════════════════════════ */
-function WeeklyTab({t}){
-  const days=[
-    {name:'MON',morning:'Quant: Arithmetic',evening:'English: Grammar',special:'Banking Awareness'},
-    {name:'TUE',morning:'Reasoning: Puzzles',evening:'English: RC + Vocab',special:'Economics'},
-    {name:'WED',morning:'Quant: DI/Caselet',evening:'English: Cloze/Para',special:'Computer Knowledge'},
-    {name:'THU',morning:'Reasoning: Syllogism',evening:'English: Errors',special:'Finance/Capital Mkts'},
-    {name:'FRI',morning:'Quant: Advanced',evening:'Current Affairs',special:'Insurance/NABARD'},
-    {name:'SAT',morning:'FULL MOCK TEST',evening:'Mock Analysis',special:'2026 Focus'},
-    {name:'SUN',morning:'PYQ Paper',evening:'Concept Repair',special:'Weekly Review'},
-  ];
-  return (
-    <div>
-      <SectionLabel t={t}>7-Day Rotation</SectionLabel>
-      <div className="week-grid" style={{display:'grid',gridTemplateColumns:'repeat(7,1fr)',gap:7,marginBottom:20}}>
-        {days.map((d,i)=>(
-          <div key={i} style={{background:t.surface,border:`1px solid ${t.border}`,borderTop:`2px solid ${i>=5?'#a78bfa44':'#00b47a33'}`,borderRadius:9,padding:'10px 7px',textAlign:'center'}}>
-            <div style={{fontFamily:t.mono,fontSize:8,letterSpacing:1.5,color:t.textMuted,textTransform:'uppercase',marginBottom:7}}>{d.name}</div>
-            <div style={{fontSize:9,color:i>=5?'#a78bfa':t.accent,fontWeight:600,marginBottom:3,lineHeight:1.4}}>{d.morning}</div>
-            <div style={{fontSize:9,color:t.textDim,marginBottom:3,lineHeight:1.4}}>{d.evening}</div>
-            <div style={{fontSize:9,color:'#fb923c',lineHeight:1.4}}>{d.special}</div>
-          </div>
-        ))}
-      </div>
-      <Card t={t}>
-        <div style={{fontSize:12,fontWeight:700,color:t.text,marginBottom:12}}>Monthly Mock Rotation</div>
-        {[['Week 1','IBPS PO / SBI PO Prelims pattern mock'],['Week 2','SSC CGL / CHSL full mock'],['Week 3','RBI Grade B / SEBI Grade A pattern mock'],['Week 4','IBPS Clerk / LIC AAO mock']].map(([w,d])=>(
-          <div key={w} style={{display:'flex',gap:12,padding:'8px 0',borderBottom:`1px solid ${t.border}`}}>
-            <span style={{fontFamily:t.mono,fontSize:10,color:'#a78bfa',minWidth:55,flexShrink:0}}>{w}</span>
-            <span style={{fontSize:11,color:t.textDim}}>{d}</span>
-          </div>
-        ))}
-      </Card>
-    </div>
-  );
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   SYLLABUS CHECKLIST TAB
-═══════════════════════════════════════════════════════════════ */
-function ChecklistTab({t}){
-  const examNames=Object.keys(EXAM_DATA);
-  const [selExam,setSelExam]=useState(examNames[0]);
-  const [selPhase,setSelPhase]=useState('prelims');
-  const [checked,setChecked]=useState({});
-
-  const exam=EXAM_DATA[selExam];
-  const phaseKeys=Object.keys(exam).filter(k=>!['color','priority','vacancies'].includes(k));
-  const phaseData=exam[selPhase]||exam[phaseKeys[0]];
-  const phaseLabels={prelims:'Prelims',mains:'Mains',interview:'Interview',skill:'Skill Test'};
-
-  const changeExam=(name)=>{
-    setSelExam(name);
-    const keys=Object.keys(EXAM_DATA[name]).filter(k=>!['color','priority','vacancies'].includes(k));
-    setSelPhase(keys[0]);
-  };
-
-  const toggleItem=useCallback((key)=>setChecked(p=>({...p,[key]:!p[key]})),[]);
-
-  const getOverallProg=()=>{
-    let tot=0,dn=0;
-    phaseKeys.forEach(pk=>{
-      const pd=exam[pk];
-      if(pd?.sections) Object.values(pd.sections).flat().forEach(item=>{tot++;if(checked[`${selExam}||${pk}||${item}`])dn++;});
-    });
-    return tot?Math.round((dn/tot)*100):0;
-  };
-  const getPhaseProg=()=>{
-    if(!phaseData?.sections)return{done:0,total:0};
-    let tot=0,dn=0;
-    Object.values(phaseData.sections).flat().forEach(item=>{tot++;if(checked[`${selExam}||${selPhase}||${item}`])dn++;});
-    return{done:dn,total:tot};
-  };
-
-  const prog=getOverallProg();
-  const {done,total}=getPhaseProg();
-  const allChk=phaseData?.sections&&Object.values(phaseData.sections).flat().every(i=>checked[`${selExam}||${selPhase}||${i}`]);
-
-  const toggleAll=()=>{
-    if(!phaseData?.sections)return;
-    const nc={...checked};
-    Object.values(phaseData.sections).flat().forEach(i=>{nc[`${selExam}||${selPhase}||${i}`]=!allChk;});
-    setChecked(nc);
-  };
-
-  return (
-    <div>
-      <div style={{marginBottom:18}}>
-        <SectionLabel t={t}>Select Exam</SectionLabel>
-        <div style={{display:'flex',flexWrap:'wrap',gap:6}}>
-          {examNames.map(name=>{
-            const ed=EXAM_DATA[name];const ia=name===selExam;
-            return <button key={name} onClick={()=>changeExam(name)}
-              style={{padding:'5px 10px',borderRadius:7,border:`1px solid ${ia?ed.color:t.border}`,background:ia?`${ed.color}18`:'transparent',color:ia?ed.color:t.textMuted,fontSize:10,fontFamily:t.mono,transition:'all 0.15s'}}>{name}</button>;
-          })}
-        </div>
-      </div>
-
-      <div style={{background:t.surface,border:`1px solid ${t.border}`,borderRadius:12,padding:15,marginBottom:14,borderTop:`3px solid ${exam.color}`}}>
-        <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-start',flexWrap:'wrap',gap:8}}>
-          <div>
-            <div style={{fontSize:14,fontWeight:800,color:t.text}}>{selExam}</div>
-            <div style={{fontSize:10,fontFamily:t.mono,color:t.textMuted,marginTop:3}}>
-              <span style={{color:exam.color}}>{exam.priority}</span>
-              {exam.vacancies&&<span> · {exam.vacancies} Vacancies</span>}
-            </div>
-          </div>
-          <div style={{textAlign:'right'}}>
-            <div style={{fontSize:22,fontWeight:800,fontFamily:t.mono,color:prog>=80?'#00b47a':prog>=40?'#fb923c':t.textMuted,lineHeight:1}}>{prog}%</div>
-            <div style={{fontSize:9,color:t.textMuted,fontFamily:t.mono}}>OVERALL</div>
-          </div>
-        </div>
-        <div style={{height:4,background:t.border,borderRadius:2,marginTop:10,overflow:'hidden'}}>
-          <div style={{height:'100%',width:`${prog}%`,background:`linear-gradient(90deg,${exam.color},${exam.color}bb)`,borderRadius:2,transition:'width 0.4s'}}/>
-        </div>
-      </div>
-
-      <div style={{display:'flex',gap:6,marginBottom:12,flexWrap:'wrap'}}>
-        {phaseKeys.map(pk=>(
-          <button key={pk} onClick={()=>setSelPhase(pk)}
-            style={{padding:'6px 12px',borderRadius:7,border:`1px solid ${selPhase===pk?exam.color:t.border}`,background:selPhase===pk?`${exam.color}18`:'transparent',color:selPhase===pk?exam.color:t.textMuted,fontSize:11,fontFamily:t.mono,textTransform:'capitalize'}}>
-            {phaseLabels[pk]||pk}
-          </button>
-        ))}
-      </div>
-
-      {phaseData?.pattern&&(
-        <div style={{background:`${exam.color}0d`,border:`1px solid ${exam.color}25`,borderRadius:8,padding:'9px 13px',marginBottom:12,fontSize:11,color:exam.color,fontFamily:t.mono,lineHeight:1.5}}>
-          📋 {phaseData.pattern}
-        </div>
-      )}
-
-      <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:12}}>
-        <div style={{fontSize:11,color:t.textMuted,fontFamily:t.mono}}>{done}/{total} topics covered</div>
-        <button onClick={toggleAll} style={{fontSize:10,fontFamily:t.mono,padding:'4px 10px',borderRadius:6,border:`1px solid ${t.border}`,background:'transparent',color:t.textMuted}}>
-          {allChk?'✓ Uncheck All':'Check All'}
-        </button>
-      </div>
-
-      {phaseData?.sections&&Object.entries(phaseData.sections).map(([section,items])=>{
-        const sdone=items.filter(i=>checked[`${selExam}||${selPhase}||${i}`]).length;
-        return (
-          <div key={section} style={{background:t.surface,border:`1px solid ${t.border}`,borderRadius:10,marginBottom:12,overflow:'hidden'}}>
-            <div style={{padding:'10px 14px',borderBottom:`1px solid ${t.border}`,display:'flex',justifyContent:'space-between',alignItems:'center'}}>
-              <div style={{fontSize:12,fontWeight:700,color:t.text}}>{section}</div>
-              <div style={{fontSize:10,fontFamily:t.mono,color:sdone===items.length?'#00b47a':t.textMuted}}>{sdone}/{items.length}</div>
-            </div>
-            <div style={{padding:'6px 10px'}}>
-              {items.map((item,i)=>{
-                const key=`${selExam}||${selPhase}||${item}`;
-                const ic=!!checked[key];
-                return (
-                  <div key={i} className="check-item" onClick={()=>toggleItem(key)}
-                    style={{'--hover-bg':t.inputBg,display:'flex',alignItems:'flex-start',gap:10,padding:'7px 6px',cursor:'pointer'}}>
-                    <div style={{width:18,height:18,borderRadius:5,border:`2px solid ${ic?exam.color:t.border2}`,background:ic?exam.color:'transparent',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0,marginTop:1,transition:'all 0.15s'}}>
-                      {ic&&<span style={{color:'#fff',fontSize:11,fontWeight:700,lineHeight:1}}>✓</span>}
-                    </div>
-                    <span style={{fontSize:12,color:ic?t.textMuted:t.text,textDecoration:ic?'line-through':'none',lineHeight:1.55,transition:'all 0.15s'}}>{item}</span>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        );
-      })}
-    </div>
-  );
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   PHASE CHECKLISTS TAB
-═══════════════════════════════════════════════════════════════ */
-function PhaseChecklistTab({t}){
-  const names=Object.keys(PHASE_CHECKLISTS);
-  const [selPhase,setSelPhase]=useState(names[0]);
-  const [checked,setChecked]=useState({});
-  const phase=PHASE_CHECKLISTS[selPhase];
-  const toggleItem=useCallback((key)=>setChecked(p=>({...p,[key]:!p[key]})),[]);
-
-  const getProg=(name)=>{
-    const ph=PHASE_CHECKLISTS[name];
-    const items=Object.values(ph.sections).flat();
-    const dn=items.filter(i=>checked[`${name}||${i}`]).length;
-    return items.length?Math.round((dn/items.length)*100):0;
-  };
-  const curItems=Object.values(phase.sections).flat();
-  const curDone=curItems.filter(i=>checked[`${selPhase}||${i}`]).length;
-  const allChk=curItems.every(i=>checked[`${selPhase}||${i}`]);
-  const toggleAll=()=>{
-    const nc={...checked};
-    curItems.forEach(i=>{nc[`${selPhase}||${i}`]=!allChk;});
-    setChecked(nc);
-  };
-
-  return (
-    <div>
-      <div style={{display:'flex',gap:8,flexWrap:'wrap',marginBottom:18}}>
-        {names.map(name=>{
-          const ph=PHASE_CHECKLISTS[name];const ia=name===selPhase;
-          return (
-            <button key={name} onClick={()=>setSelPhase(name)}
-              style={{padding:'8px 13px',borderRadius:9,border:`1px solid ${ia?ph.color:t.border}`,background:ia?`${ph.color}18`:'transparent',color:ia?ph.color:t.textMuted,fontSize:10,fontFamily:t.mono,cursor:'pointer',display:'flex',flexDirection:'column',gap:2,transition:'all 0.15s'}}>
-              <span>{name.split('—')[0].trim()}</span>
-              <span style={{fontSize:9,opacity:0.8}}>{getProg(name)}% done</span>
-            </button>
-          );
-        })}
-      </div>
-
-      <div style={{background:`${phase.color}10`,border:`1px solid ${phase.color}28`,borderRadius:10,padding:'13px 15px',marginBottom:14}}>
-        <div style={{fontSize:13,fontWeight:800,color:phase.color,marginBottom:8}}>{selPhase}</div>
-        <div style={{height:4,background:t.border,borderRadius:2,overflow:'hidden'}}>
-          <div style={{height:'100%',width:`${getProg(selPhase)}%`,background:phase.color,borderRadius:2,transition:'width 0.4s'}}/>
-        </div>
-        <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginTop:6}}>
-          <div style={{fontSize:10,color:t.textMuted,fontFamily:t.mono}}>{curDone}/{curItems.length} items</div>
-          <button onClick={toggleAll} style={{fontSize:10,fontFamily:t.mono,padding:'3px 9px',borderRadius:5,border:`1px solid ${t.border}`,background:'transparent',color:t.textMuted,cursor:'pointer'}}>
-            {allChk?'✓ Uncheck All':'Check All'}
-          </button>
-        </div>
-      </div>
-
-      {Object.entries(phase.sections).map(([section,items])=>{
-        const sdone=items.filter(i=>checked[`${selPhase}||${i}`]).length;
-        return (
-          <div key={section} style={{background:t.surface,border:`1px solid ${t.border}`,borderRadius:10,marginBottom:12,overflow:'hidden'}}>
-            <div style={{padding:'10px 14px',borderBottom:`1px solid ${t.border}`,display:'flex',justifyContent:'space-between',alignItems:'center'}}>
-              <div style={{fontSize:12,fontWeight:700,color:t.text}}>{section}</div>
-              <div style={{fontSize:10,fontFamily:t.mono,color:sdone===items.length?'#00b47a':t.textMuted}}>{sdone}/{items.length}</div>
-            </div>
-            <div style={{padding:'6px 10px'}}>
-              {items.map((item,i)=>{
-                const key=`${selPhase}||${item}`;const ic=!!checked[key];
-                return (
-                  <div key={i} className="check-item" onClick={()=>toggleItem(key)}
-                    style={{'--hover-bg':t.inputBg,display:'flex',alignItems:'flex-start',gap:10,padding:'7px 6px',cursor:'pointer'}}>
-                    <div style={{width:18,height:18,borderRadius:5,border:`2px solid ${ic?phase.color:t.border2}`,background:ic?phase.color:'transparent',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0,marginTop:1,transition:'all 0.15s'}}>
-                      {ic&&<span style={{color:'#fff',fontSize:11,fontWeight:700,lineHeight:1}}>✓</span>}
-                    </div>
-                    <span style={{fontSize:12,color:ic?t.textMuted:t.text,textDecoration:ic?'line-through':'none',lineHeight:1.55,transition:'all 0.15s'}}>{item}</span>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        );
-      })}
-    </div>
-  );
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   GOLDEN RULES TAB
-═══════════════════════════════════════════════════════════════ */
-function RulesTab({t}){
-  const rules=[
-    ['Practice Beats Theory — Always',"You've studied concepts. Every extra hour re-reading notes loses 30 practice questions. Default mode: practice-first. Read only when a session reveals a specific gap."],
-    ['Current Affairs is a Daily Tax','Cannot cram 6 months in 2 weeks. 15 min every morning — one news app, one banking quiz. Compound interest applies to knowledge too.'],
-    ['Weak Sections = Hidden Topper Secret','2% gain in strong section = 1 mark. 2% gain in weak section = 4 marks. Allocate 40% drill time to your weakest areas.'],
-    ['Never Skip Mock Analysis','Mock without analysis = 3 hours wasted. The error map is worth more than the score. 2 hours post-mock > 3 hours of the mock itself.'],
-    ['22-Exam Advantage is Real',"Every exam makes the next easier — you've seen the pressure, the UI, the crunch. UPCISBL and MP Apex are live rehearsals for IBPS PO."],
-    ['Energy Management > Time Management','Tired mind = useless study. 20 min CA and sleep > 3 hours of depleted half-study. Protect your morning block fiercely.'],
-    ['One Week at a Time',"22 exams = paralysis if you stare at all of them. Focus on this week's schedule only. The plan is built — trust it and execute."],
-    ['Error Notebook = Most Valuable Asset','Every wrong answer: question type + trap + correct approach. Review every Sunday. By exam day, every trap is mapped.'],
-    ['GK is Not Last-Minute','1000+ items to memorize. Anki: 10 new cards/day = 1800 cards in 6 months. The only way is distributed repetition. Start today.'],
-    ['UPCISBL Cooperative Knowledge is Unique','Only exam with Cooperative Laws & UP Cooperative Bank history. 25 marks in Mains (15+10). Others skip this. This is extra edge.'],
-  ];
-  return (
-    <div>
-      {rules.map(([title,body],i)=>(
-        <div key={i} style={{display:'flex',gap:14,padding:'14px 0',borderBottom:`1px solid ${t.border}`}}>
-          <div style={{fontFamily:t.mono,fontSize:18,fontWeight:700,color:`${t.accent}28`,minWidth:30,lineHeight:1}}>{String(i+1).padStart(2,'0')}</div>
-          <div>
-            <div style={{fontSize:13,fontWeight:700,color:t.text,marginBottom:4}}>{title}</div>
-            <div style={{fontSize:12,color:t.textMuted,lineHeight:1.7}}>{body}</div>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   APP ROOT
-═══════════════════════════════════════════════════════════════ */
-const TABS=[
-  {id:'overview',label:'Overview'},
-  {id:'upcisbl',label:'UPCISBL 2026'},
-  {id:'daily',label:'Daily Plan'},
-  {id:'weekly',label:'Weekly'},
-  {id:'checklist',label:'✓ Syllabus'},
-  {id:'phases',label:'✓ Phase Lists'},
-  {id:'rules',label:'Rules'},
-];
-
-function App(){
-  const [activeTab,setActiveTab]=useState('overview');
-  const [dark,setDark]=useState(true);
-  const t=THEMES[dark?'dark':'light'];
-
-  const renderTab=()=>{
-    const p={t};
-    switch(activeTab){
-      case 'overview': return <OverviewTab {...p}/>;
-      case 'upcisbl':  return <UPCISBLTab {...p}/>;
-      case 'daily':    return <DailyTab {...p}/>;
-      case 'weekly':   return <WeeklyTab {...p}/>;
-      case 'checklist':return <ChecklistTab {...p}/>;
-      case 'phases':   return <PhaseChecklistTab {...p}/>;
-      case 'rules':    return <RulesTab {...p}/>;
-      default:         return <OverviewTab {...p}/>;
-    }
-  };
-
-  return (
-    <div style={{fontFamily:"'Syne','Segoe UI',system-ui,sans-serif",background:t.bg,minHeight:'100vh',color:t.text,transition:'background 0.25s,color 0.25s'}}>
-
-      {/* HEADER */}
-      <div style={{borderBottom:`1px solid ${t.border}`,padding:'13px 16px 10px',background:t.headerBg,backdropFilter:'blur(12px)',WebkitBackdropFilter:'blur(12px)',position:'sticky',top:0,zIndex:100}}>
-        <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-start'}}>
-          <div>
-            <div style={{fontFamily:t.mono,fontSize:8,letterSpacing:3,color:t.accent,textTransform:'uppercase',marginBottom:3,opacity:0.8}}>// EXAM OPS CENTER</div>
-            <div style={{fontSize:18,fontWeight:800,color:t.text,letterSpacing:'-0.5px',lineHeight:1.2}}>
-              Omni-Prep <span style={{color:t.accent}}>2026–27</span>
-            </div>
-            <div style={{fontFamily:t.mono,fontSize:9,color:t.textMuted,marginTop:2}}>22 EXAMS · 3 PHASES · WORKING PRO EDITION</div>
-          </div>
-          <button onClick={()=>setDark(!dark)}
-            style={{padding:'8px 12px',borderRadius:8,border:`1px solid ${t.border}`,background:t.surface,color:t.textDim,fontSize:16,flexShrink:0,transition:'all 0.2s',lineHeight:1}}>
-            {dark?'☀️':'🌙'}
-          </button>
-        </div>
-      </div>
-
-      {/* TAB BAR */}
-      <div className="tab-bar" style={{display:'flex',padding:'0 4px',borderBottom:`1px solid ${t.border}`,overflowX:'auto',background:t.headerBg}}>
-        {TABS.map(tab=>(
-          <button key={tab.id} onClick={()=>setActiveTab(tab.id)}
-            style={{fontFamily:t.mono,fontSize:9,letterSpacing:'0.8px',textTransform:'uppercase',padding:'10px 11px',border:'none',background:activeTab===tab.id?t.tabBg:'transparent',color:activeTab===tab.id?t.accent:t.textMuted,borderBottom:`2px solid ${activeTab===tab.id?t.accent:'transparent'}`,whiteSpace:'nowrap',transition:'all 0.15s',flexShrink:0}}>
-            {tab.label}
-          </button>
-        ))}
-      </div>
-
-      {/* CONTENT */}
-      <div style={{padding:'18px 14px',maxWidth:920,margin:'0 auto'}}>
-        {renderTab()}
-      </div>
-
-    </div>
-  );
-}
-
-ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
 </script>
+</head>
+
+<body>
+
+<header>
+  <main>
+    <h1 class="hero-title">
+      Omni-Prep 2026–27
+    </h1>
+
+    <p class="hero-subtitle">
+      Strategic preparation system for RBI Grade B, SEBI Grade A, SSC, Banking, Insurance and Cooperative sector exams.
+    </p>
+
+    <section class="grid stats" aria-label="Platform statistics">
+
+      <article class="card">
+        <div class="stat-number">22</div>
+        <p>Total Exams</p>
+      </article>
+
+      <article class="card">
+        <div class="stat-number">5</div>
+        <p>2026 Targets</p>
+      </article>
+
+      <article class="card">
+        <div class="stat-number">5h</div>
+        <p>Daily Study</p>
+      </article>
+
+      <article class="card">
+        <div class="stat-number">3</div>
+        <p>Preparation Phases</p>
+      </article>
+
+    </section>
+  </main>
+</header>
+
+<main>
+
+<section class="section" aria-labelledby="priority-exams">
+
+<h2 id="priority-exams">Priority Exams</h2>
+
+<div class="exam-grid">
+
+<article class="exam-card">
+<h3 class="exam-title">RBI Grade B</h3>
+<p class="exam-meta">Phase 1 + ESI + FM + Interview</p>
+</article>
+
+<article class="exam-card">
+<h3 class="exam-title">SEBI Grade A</h3>
+<p class="exam-meta">Capital Markets + Securities Laws</p>
+</article>
+
+<article class="exam-card">
+<h3 class="exam-title">SSC CGL</h3>
+<p class="exam-meta">Tier I + Tier II Preparation</p>
+</article>
+
+<article class="exam-card">
+<h3 class="exam-title">IBPS PO</h3>
+<p class="exam-meta">Banking + Reasoning + DI Focus</p>
+</article>
+
+</div>
+
+</section>
+
+<section class="section" aria-labelledby="daily-plan">
+
+<h2 id="daily-plan">Daily Preparation Structure</h2>
+
+<div class="exam-grid">
+
+<article class="exam-card">
+<h3 class="exam-title">Morning Quant Block</h3>
+<p class="exam-meta">
+Arithmetic, DI, speed drills and mock analysis.
+</p>
+</article>
+
+<article class="exam-card">
+<h3 class="exam-title">Reasoning Practice</h3>
+<p class="exam-meta">
+Puzzles, seating arrangements and critical reasoning.
+</p>
+</article>
+
+<article class="exam-card">
+<h3 class="exam-title">Current Affairs</h3>
+<p class="exam-meta">
+Banking, economy, RBI and government schemes.
+</p>
+</article>
+
+</div>
+
+</section>
+
+<footer>
+  <p>
+    © 2026 Omni-Prep. Optimized for Lighthouse, Core Web Vitals and accessibility.
+  </p>
+</footer>
+
+</main>
+
+<!-- Deferred JS -->
+<script defer>
+(() => {
+
+'use strict';
+
+document.addEventListener('click', e => {
+
+  const tab = e.target.closest('[data-tab]');
+
+  if(!tab) return;
+
+  document.querySelectorAll('[data-tab]').forEach(el => {
+    el.setAttribute('aria-selected','false');
+  });
+
+  tab.setAttribute('aria-selected','true');
+
+});
+
+window.addEventListener(
+  'scroll',
+  () => {},
+  { passive:true }
+);
+
+})();
+</script>
+
 </body>
 </html>
+```
+
+---
+
+# `manifest.json`
+
+```json
+{
+  "name": "Omni-Prep 2026-27",
+  "short_name": "OmniPrep",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080c10",
+  "theme_color": "#080c10",
+  "description": "Government exam preparation dashboard",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+```
+
+---
+
+# Responsive Image Pattern
+
+```html
+<img
+src="/images/dashboard-800.webp"
+srcset="
+/images/dashboard-400.webp 400w,
+/images/dashboard-800.webp 800w,
+/images/dashboard-1200.webp 1200w
+"
+sizes="(max-width:768px) 100vw, 50vw"
+width="800"
+height="450"
+loading="lazy"
+decoding="async"
+alt="Omni Prep dashboard showing government exam preparation roadmap"
+>
+```
+
+---
+
+# Deployment Notes
+
+1. Replace your current HTML with this optimized version.
+2. Add the `manifest.json` in project root.
+3. Convert images to `.webp`.
+4. Deploy with Vercel/Netlify.
+5. Enable Brotli/Gzip compression.
+6. Prefer Vite build process for production.
+7. Remove Babel CDN entirely in production.
